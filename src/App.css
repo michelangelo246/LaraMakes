@@ -1,11 +1,18 @@
 body {
    font-family: 'Open Sans Condensed';
-   padding: 20px 60px;
+}
 
+.body-template {
+   padding: 0 60px;
+}
+
+a {
+   text-decoration: none;
+   color: black;
 }
 
 @media (max-width: 760px) {
-   body {
-      padding: 20px 0;
+   .body-template {
+      padding: 0;
    }
 }
