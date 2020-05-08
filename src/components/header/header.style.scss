@@ -8,17 +8,36 @@
    box-sizing: border-box;
    background-color: rgb(41, 48, 59);
 
-   .logo {
-      width: 100%;
-      height: 100%;
-      filter: invert(1);
+   .brand {
+      display: flex;
+      align-items: center;
+
+      .brand-name {
+         margin-left: 15px;
+         font-size: 2em;
+         color: lightpink;
+         font-weight: bolder;
+         font-family: 'Great Vibes';
+         margin-top: 5px;
+
+         &::first-letter {
+            color: #e75480;
+         }
+      }
+
+      .logo-placeholder {
+         width: 70px;
+         height: 70px;
+         padding: 10px;
+
+         .logo {
+            width: 100%;
+            height: 100%;
+            filter: invert(1);
+         }
+      }
    }
- 
-   .logo-container {
-     width: 70px;
-     padding: 10px;
-   }
- 
+   
    .options {
      width: 50%;
      height: 100%;
@@ -31,6 +50,11 @@
        color: pink;
        font-weight: bold;
        font-size: 1.3em;
+       cursor: pointer;
+
+       &:hover {
+         color: #e75480;
+       }
      }
    }
  }
