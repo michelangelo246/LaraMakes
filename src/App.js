@@ -35,7 +35,7 @@ class App extends Component{
       else{ // se foi um logout, o usuário está vazio
         this.setState({
           currentUser: userAuth //currentUser: null
-        });
+        }, console.log("zerou currentUser"));
       }
     });
   }
