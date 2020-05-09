@@ -29,7 +29,7 @@ class SignIn extends Component{
       const {email, password} = this.state;
       return(
          <div className="sign-in">
-            <h2>Já possui uma conta?</h2>
+            <h2 className="title">Já possui uma conta?</h2>
             <span>Entre com seu email e senha</span>
 
             <form onSubmit={this.handleSubmit}>
