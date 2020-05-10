@@ -1,5 +1,5 @@
 .header {
-   height: 87px;
+   height: 56px;
    width: 100%;
    display: flex;
    justify-content: space-between;
@@ -11,6 +11,7 @@
    .brand {
       display: flex;
       align-items: center;
+      transform: scale(0.9);
 
       .brand-name {
          margin-left: 15px;
@@ -26,9 +27,8 @@
       }
 
       .logo-placeholder {
-         width: 70px;
-         height: 70px;
-         padding: 10px;
+         width: 56px;
+         height: 56px;
 
          .logo {
             width: 100%;

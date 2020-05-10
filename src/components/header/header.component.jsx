@@ -3,6 +3,7 @@ import './header.style.scss'
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from './../../assets/logo.svg'
 import { auth } from '../../firebase/firebase.utils'
+import { connect } from 'react-redux';
 
 const Header = ({ currentUser }) => (
    <div className="header">
@@ -28,4 +29,13 @@ const Header = ({ currentUser }) => (
    </div>
 )
 
-export default Header;
+const mapStateToProps = state => ({ // função: pegar props a partir do root reducer
+   currentUser: state.user.currentUser // escolher props
+})
+
+export default connect(mapStateToProps)(Header);
+
+
+// pode ser?
+// const connector = connect(mapStateToProps);
+// export default connector(Header);
