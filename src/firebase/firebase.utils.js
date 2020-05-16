@@ -13,6 +13,8 @@ const config = {
   measurementId: "G-XV5WM2B11F"
 };
 
+// realiza uma consulta pelo usuário no BD
+// se existir, retorna referencia ao documento, senão, cria um e retorna uma referencia ao documento
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if(!userAuth)
     return;

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger'; // funcao para redux debug
-import rootReducer from './root-reducer';
+import rootReducer from './root.reducer'
 
 const middlewares = [ logger ]; // coloca middlewares aqui para facilitar passagem abaixo
 

@@ -36,6 +36,5 @@ const mapStateToProps = state => ({ // função: pegar props a partir do root re
 export default connect(mapStateToProps)(Header);
 
 
-// pode ser?
 // const connector = connect(mapStateToProps);
 // export default connector(Header);
