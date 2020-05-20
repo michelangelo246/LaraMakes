@@ -30,19 +30,19 @@ const SHOP_DATA = [
       routeName: "bases",
       items: [
          {
-            id: 1,
+            id: 4,
             name: 'Studio fix',
             imageUrl: 'https://www.maccosmetics.com.br/media/export/cms/products/280x320/mac_sku_M6JC40_280x320_0_INTL.jpg',
             price: '55'
          },
          {
-            id: 2,
+            id: 5,
             name: 'Sculpt',
             imageUrl: 'https://m.maccosmetics.com.br/media/export/cms/products/640x600/mac_sku_MAN702_640x600_0_INTL.jpg',
             price: '55'
          },
          {
-            id: 3,
+            id: 6,
             name: 'Match Manchester',
             imageUrl: 'https://m.maccosmetics.com.br/media/export/cms/products/640x600/mac_sku_MK4101_640x600_0_INTL.jpg',
             price: '55'
@@ -55,19 +55,19 @@ const SHOP_DATA = [
       routeName: "corretivos",
       items: [
          {
-            id: 1,
+            id: 7,
             name: 'Pro Longwear',
             imageUrl: 'https://m.maccosmetics.com.br/media/export/cms/products/640x600/mac_sku_MGT902_640x600_0.jpg',
             price: '55'
          },
          {
-            id: 2,
+            id: 8,
             name: 'Water Weight',
             imageUrl: 'https://r1.sephora.com.br/resize/480x480/catalog/product/7/7/773602463787_1000px.jpg',
             price: '55'
          },
          {
-            id: 3,
+            id: 9,
             name: 'Mineralize',
             imageUrl: 'https://r1.sephora.com.br/resize/catalog/product/_/E/_E4B9B009-3191-4EBA-8374-8F924E6CC105__6835836_500px_1.jpg',
             price: '55'
@@ -80,19 +80,19 @@ const SHOP_DATA = [
       routeName: "pos",
       items: [
          {
-            id: 1,
+            id: 10,
             name: 'Mineralize',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_MT1329_640x600_0.jpg',
             price: '55'
          },
          {
-            id: 2,
+            id: 11,
             name: 'Extra Dimension',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_MLGK20_640x600_0.jpg',
             price: '55'
          },
          {
-            id: 3,
+            id: 12,
             name: 'Studio Fix',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_M51021_640x600_0.jpg',
             price: '55'
@@ -105,19 +105,19 @@ const SHOP_DATA = [
       routeName: "blush",
       items: [
          {
-            id: 1,
+            id: 13,
             name: 'Blush compacto',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_M22017_640x600_0.jpg',
             price: '55'
          },
          {
-            id: 2,
+            id: 14,
             name: 'Mineralize',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_MT1N46_640x600_0.jpg',
             price: '55'
          },
          {
-            id: 3,
+            id: 15,
             name: 'Glow Play',
             imageUrl: 'https://www.maccosmetics.com/media/export/cms/products/640x600/mac_sku_S7GR02_640x600_1.jpg',
             price: '55'
