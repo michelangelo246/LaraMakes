@@ -9,3 +9,11 @@ export const addItemToCart = (cartItems, newItem) => {
    }
    return [...cartItems, { ...newItem, quantity: 1 }];
 }
+
+export const removeItemFromCart = (cartItems, itemToRemove) => (
+   cartItems.map(item => (
+      item.id === itemToRemove.id?
+      { ...item, quantity: item.quantity - 1 }:
+      item
+   ))
+)
