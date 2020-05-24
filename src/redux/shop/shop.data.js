@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-   {
+const SHOP_DATA = {
+   batons: {
       id: 1,
       title: "Batons",
       routeName: "batons",
@@ -24,7 +24,7 @@ const SHOP_DATA = [
          }
       ]
    },
-   {
+   bases: {
       id: 2,
       title: "Bases",
       routeName: "bases",
@@ -49,7 +49,7 @@ const SHOP_DATA = [
          }
       ]
    },
-   {
+   corretivos: {
       id: 3,
       title: "Corretivos",
       routeName: "corretivos",
@@ -74,7 +74,7 @@ const SHOP_DATA = [
          }
       ]
    },
-   {
+   pos: {
       id: 4,
       title: "Pós",
       routeName: "pos",
@@ -99,10 +99,10 @@ const SHOP_DATA = [
          }
       ]
    },
-   {
+   blushes: {
       id: 5,
-      title: "Blush",
-      routeName: "blush",
+      title: "Blushes",
+      routeName: "blushes",
       items: [
          {
             id: 13,
@@ -124,6 +124,6 @@ const SHOP_DATA = [
          }
       ]
    }
-]
+}
 
 export default SHOP_DATA;
