@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './sign-in.style.scss';
-import FormInput from '../form-input/form-input.component';
-import CustomButton from '../custom-button/custom-button.component';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import CustomButton from '../custom-button/custom-button.component';
+import FormInput from '../form-input/form-input.component';
+import { ButtonsBarContainer, SignInContainer, SignInTitle } from './sign-in.styles';
 
-class SignIn extends Component{
-   constructor(props){
+class SignIn extends Component {
+   constructor(props) {
       super(props);
 
       this.state = {
@@ -18,11 +18,11 @@ class SignIn extends Component{
       e.preventDefault();
 
       const { email, password } = this.state;
-      try{
+      try {
          await auth.signInWithEmailAndPassword(email, password);
          this.setState({ email: '', password: '' });
       }
-      catch(err){
+      catch (err) {
          console.error(err);
       }
    }
@@ -32,11 +32,11 @@ class SignIn extends Component{
       this.setState({ [name]: value });
    }
 
-   render(){
+   render() {
       const {email, password} = this.state;
       return(
-         <div className="sign-in">
-            <h2 className="title">Já possui uma conta?</h2>
+         <SignInContainer>
+            <SignInTitle>Já possui uma conta?</SignInTitle>
             <span>Entre com seu email e senha</span>
 
             <form onSubmit={this.handleSubmit}>
@@ -58,12 +58,12 @@ class SignIn extends Component{
                   pattern=".{6,}"
                   title="ao menos 6 caracteres"
                />
-               <div className="buttons">
+               <ButtonsBarContainer>
                   <CustomButton type="submit">Entrar</CustomButton>
                   <CustomButton type="button" isGoogleSignIn onClick={signInWithGoogle}>Entrar com Google</CustomButton>
-               </div>
+               </ButtonsBarContainer>
             </form>
-         </div>
+         </SignInContainer>
       )
    }
 }
