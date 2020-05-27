@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
-import 'firebase/firestore';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 const config = {
   apiKey: "AIzaSyBuNbVDUkMFaPU4G367ZmqjPePBOCoDjmk",
@@ -13,19 +13,21 @@ const config = {
   measurementId: "G-XV5WM2B11F"
 };
 
+firebase.initializeApp(config);
+
 // realiza uma consulta pelo usuário no BD
 // se existir, retorna referencia ao documento, senão, cria um e retorna uma referencia ao documento
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if(!userAuth)
+  if (!userAuth)
     return;
-  
+
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapshot = await userRef.get()
-  if(!snapshot.exists){
+  if (!snapshot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
-    try{
+    try {
       await userRef.set({
         displayName,
         email,
@@ -33,15 +35,43 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         ...additionalData
       })
     }
-    catch(err){
+    catch (err) {
       console.log("error creating user", err);
     }
   }
 
   return userRef;
-}
+};
 
-firebase.initializeApp(config);
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+  const batch = firestore.batch();
+
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+
+  return await batch.commit();
+};
+
+export const convertCollectionsSnapshotToMap = collections => {
+  const transformedCollections = collections.docs.map(document => {
+    const { title, items } = document.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")),
+      id: document.id,
+      title,
+      items
+    };
+  });
+
+  return transformedCollections.reduce((acumulator, collection) => {
+    acumulator[collection.title.toLowerCase()] = collection;
+    return acumulator;
+  }, {});
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
