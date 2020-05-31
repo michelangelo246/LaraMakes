@@ -1,15 +1,21 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
 import { persistStore } from 'redux-persist';
-import logger from 'redux-logger'; // funcao para redux debug
-import rootReducer from './root.reducer'
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './root-saga';
+import rootReducer from './root.reducer';
 
-const middlewares = []; // coloca middlewares aqui para facilitar passagem abaixo
+const sagaMiddleware = createSagaMiddleware();
 
-if(process.env.NODE_ENV !== 'production') {
+const middlewares = [sagaMiddleware]; // coloca middlewares aqui para facilitar passagem abaixo
+
+if (process.env.NODE_ENV !== 'production') {
    middlewares.push(logger);
 }
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares)); // cria store usando o reducer principal e os middlewares
+
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);
 
